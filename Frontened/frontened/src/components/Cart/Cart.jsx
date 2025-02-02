@@ -69,7 +69,7 @@ export default function Cart() {
     try {
       const stripe = await loadStripe("pk_test_51QSifpEZj9co3L2BbdcWAV8hYQoauxstmYUoTk1c2qsXoB1jhMDM5aix7ymmLGwQ4cgLQhG23ZlVPXDpqCJvenSP00vU5n6CpL");
 
-      const response=await axios.post("https://a28f-2409-40f0-103e-d2ba-f5fe-df77-96bd-cdbf.ngrok-free.app/api/v1/payment/transaction",
+      const response=await axios.post("https://skillgroww.onrender.com/api/v1/payment/transaction",
       {cartitem:cartitem,discountprice:discountprice,userid:userid,cartitemid:cartid}
         
       )
