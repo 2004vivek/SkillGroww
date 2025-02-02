@@ -44,8 +44,8 @@ exports.orderCreate=async(req,res)=>{
               userid:userid?.toString(),
               cartitemid:cartitemid?.toString()
             },
-            success_url: "http://localhost:5173/",
-            cancel_url: "http://localhost:5173/"
+            success_url: "https://skill-groww.vercel.app",
+            cancel_url: "https://skill-groww.vercel.app"
           });
 
           return res.json({id:session.id})
