@@ -1,0 +1,23 @@
+const mongoose=require("mongoose")
+const RatingAndReviewSchema=new mongoose.Schema({
+   user:{
+    type:mongoose.Schema.Types.ObjectId,
+    required:true,
+    ref:"user"
+   },
+   rating:{
+    type:String,
+    required:true
+   },
+   review:{
+    type:String,
+    required:true
+   },
+   course:{
+      type:mongoose.Schema.Types.ObjectId,
+      required:true,
+      ref:"courses",
+      index:true
+   }
+})
+module.exports=mongoose.model("RatingAndReview",RatingAndReviewSchema)
