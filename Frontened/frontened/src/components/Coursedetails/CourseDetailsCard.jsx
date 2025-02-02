@@ -16,7 +16,7 @@ export default function CourseDetailsCard({coursedata}) {
     const location=useLocation();
     const userdetails=JSON.parse(localStorage.getItem("usertype"))
     const userid=userdetails._id;
-    const pathname="http://localhost:5173"+location.pathname;
+    const pathname="https://skill-groww.vercel.app"+location.pathname;
     const shareHandler=()=>{
         copy(pathname);
         toast.success("Copied to Clipboard")
