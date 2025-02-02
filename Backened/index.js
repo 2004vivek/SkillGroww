@@ -23,7 +23,7 @@ app.options("*", cors());
 app.use(cookieparser())
 
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://skill-groww.vercel.app/",
     credentials:true
 }))
 
