@@ -49,7 +49,7 @@ export default function CourseDetailsCard({coursedata}) {
         const stripe = await loadStripe("pk_test_51QSifpEZj9co3L2BbdcWAV8hYQoauxstmYUoTk1c2qsXoB1jhMDM5aix7ymmLGwQ4cgLQhG23ZlVPXDpqCJvenSP00vU5n6CpL");
   
         const response=await axios.post("https://skillgroww.onrender.com/api/v1/payment/transaction",
-        {cartitem:cartitem,discountprice:discountprice,userid:userid,cartitemid:''}
+        {cartitem:cartitem,discountprice:discountprice,userid:userid}
           
         )
         console.log("this is error while stripe redirect",response)
