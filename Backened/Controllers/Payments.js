@@ -1,5 +1,5 @@
 const stripe = require("stripe")("sk_test_51QSifpEZj9co3L2BGyHY7nCra6SENwl9z5NwPewnhEwkO3hHxWSBH9kCLmRJi0SjluQc5vxXY2aaKllXg4d0bRAJ00SVDzvpcM");
-const webhooksecret='whsec_EmgKQlEzta4EnvtPD4YDqYX5dVeutkvN'//i need to change later because i had written temporialy
+const webhooksecret='whsec_qCBfryrkUQ42QZbkBGm2zdN7HQmkAgpX'//i need to change later because i had written temporialy
 const Course=require('../Modals/Course')
 const User=require('../Modals/User')
 const Cart=require('../Modals/Cart')

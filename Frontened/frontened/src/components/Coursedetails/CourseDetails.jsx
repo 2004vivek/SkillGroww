@@ -41,7 +41,7 @@ export default function CourseDetails() {
 
     const fetchingCourseDetails=async()=>{
         try {
-             const response=await axios.post(`http://localhost:3000/api/v1/course/getcoursedetails`,{
+             const response=await axios.post(`https://skillgroww.onrender.com/api/v1/course/getcoursedetails`,{
                 courseid:id
               })
               console.log("this is course details",response?.data);
