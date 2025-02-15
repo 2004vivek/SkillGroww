@@ -65,19 +65,19 @@ export default function ProfileUpdate() {
      {loading&&<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-900 text-yellow-500 bg-opacity-50 z-50">Loading...</div>}
     <div className="w-full bg-slate-900 mt-4 pb-5">
       <div className="w-11/12 m-auto">
-        <h3 className="text-white text-[18px] py-5 font-bold">
+        <h3 className="text-white md:text-[18px] text-[15px] py-5 font-bold">
           Profile Information
         </h3>
-        <div className="w-11/12 ">
+        <div className="md:w-11/12 ">
           <form
             action=""
             onSubmit={handleSubmit(profileFormHandler)}
             className="w-full "
           >
-            <table className="w-[90%] border-separate border-spacing-4">
+            <table className="md:w-[90%] border-separate border-spacing-4 ">
               <tr>
-                <th className="text-[15px] font-bold">First Name</th>
-                <th className="text-[15px] font-bold">Last Name</th>
+                <th className="md:text-[15px] text-[12px] font-bold">First Name</th>
+                <th className="md:text-[15px] text-[12px] font-bold">Last Name</th>
               </tr>
               <tr>
                 <td>
@@ -93,7 +93,7 @@ export default function ProfileUpdate() {
                 <td>
                   <input
                     type="text"
-                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white mt-2"
+                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white md:mt-2 "
                     placeholder="Enter the last name"
                     name="lastName"
                     {...register("lastName",{required:true})}
@@ -101,8 +101,8 @@ export default function ProfileUpdate() {
                 </td>
               </tr>
               <tr>
-                <th className="text-[15px] font-bold">Date Of Birth</th>
-                <th className="text-[15px] font-bold">Gender</th>
+                <th className="md:text-[15px] text-[12px] font-bold">Date Of Birth</th>
+                <th className="md:text-[15px] text-[12px] font-bold">Gender</th>
               </tr>
               <tr>
                 <td>
@@ -110,7 +110,7 @@ export default function ProfileUpdate() {
                   <input
                     type="date"
                     placeholder="dd/mm/yyyy"
-                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white mt-2"
+                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white md:mt-2 "
                     name="dob"
                     {...register("dob",{required:true})}
                   />
@@ -119,7 +119,7 @@ export default function ProfileUpdate() {
                   <select
                     name=""
                     id=""
-                    className="w-full py-[15px] text-[14px] bg-gray-800 rounded p-[8px] text-white mt-2"
+                    className="w-full py-[15px] text-[14px] bg-gray-800 rounded p-[8px] text-white md:mt-2 "
                     {...register("gender",{required:true})}
                   >
                     <option value="Male">Male</option>
@@ -128,15 +128,15 @@ export default function ProfileUpdate() {
                 </td>
               </tr>
               <tr>
-                <th className="text-[15px] font-bold">Contact Number</th>
-                <th className="text-[15px] font-bold">About</th>
+                <th className="md:text-[15px] text-[12px] font-bold">Contact Number</th>
+                <th className="md:text-[15px] text-[12px] font-bold">About</th>
               </tr>
               <tr>
                 <td>
                   <input
                     type="tel"
                     placeholder="Enter the Contact Number"
-                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white mt-2"
+                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white md:mt-2 "
                     name="phoneNumber"
                     {...register("phoneNumber",{required:true})}
                   />
@@ -145,7 +145,7 @@ export default function ProfileUpdate() {
                   
                   <input
                     type="text"
-                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white mt-2"
+                    className="w-full text-[14px] bg-gray-800 rounded p-[8px] text-white md:mt-2 "
                     placeholder="Enter Bio Details"
                     name="about"
                     {...register("about",{required:true})}
@@ -153,13 +153,14 @@ export default function ProfileUpdate() {
                 </td>
               </tr>
             </table>
+
             {/* buttons       */}
-    <div className="flex justify-end  w-[110%]  gap-4 mt-4">
-    <button type="submit" className="btn bg-gray-300 text-black font-bold px-3 py-1 rounded hover:bg-gray-600" onClick={()=>navigate("/dashboard/my-profile")}>
+    <div className="flex justify-end  md:w-[110%]  gap-4 mt-4">
+    <button type="submit" className="btn bg-gray-300 text-black font-bold px-3 py-1 rounded hover:bg-gray-600 max-md:text-[12px]" onClick={()=>navigate("/dashboard/my-profile")}>
         Cancel
       </button>
       
-      <button type="submit"  className="btn bg-yellow-500 text-black font-bold px-3 py-1 rounded hover:bg-yellow-600">
+      <button type="submit"  className="btn bg-yellow-500 text-black font-bold px-3 py-1 rounded hover:bg-yellow-600 max-md:text-[12px]">
         Save
       </button>
 

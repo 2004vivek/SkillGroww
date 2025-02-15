@@ -4,16 +4,18 @@ const courseProgress=require('../Modals/CourseProgress')
 exports.CourseProgress=async(req,res)=>{
     try {
         const {courseid,subsectionid}=req.body;
+        const userId=req.user.id;
 
         if(!courseid||!SubSection){
             return res.status(401).json({message:"No Course Found"})
         }
+
         //checking if there is completed video or not
-        let course=await courseProgress.findOne({courseId:courseid})
+        let course=await courseProgress.findOne({courseId:courseid,userId:userId})
         console.log("this is courseprogress",course)
 
         if(!course){
-           let completedlec = await courseProgress.create({courseId:courseid,completedvideo:[subsectionid]})
+           let completedlec = await courseProgress.create({courseId:courseid,userId:userId,completedvideo:[subsectionid]})
            await completedlec.save()
             return res.status(200).json({
                 success:true,

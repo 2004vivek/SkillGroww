@@ -14,12 +14,12 @@ export default function EnrolledCourseCard({course}) {
   return (
     <div className='flex w-full my-4 cursor-pointer mb-10 border-b-gray-800 border-b-[0.2px] py-3 hover:bg-slate-900 px-4 rounded-md' onClick={()=>navigate(`/viewcourse/${course._id}/`)}>
       <div className='w-[60%] flex text-[16px] font-bold'>
-        <div className='h-[64px] w-[120px] rounded-lg overflow-hidden'>
+        <div className='lg:h-[64px] lg:w-[120px] h-[45px] w-[100px] rounded-lg overflow-hidden'>
             <video src={course?.thumbnails} alt="course" className='w-full h-full '/>
         </div>
         <div className='w-[90%] ml-5'>
-            <div className='text-[18px] font-bold text-white'>{course?.coursename}</div>
-            <div className='text-[14px] font-medium text-slate-400'>
+            <div className='lg:text-[18px] text-[14px] font-bold text-white'>{course?.coursename}</div>
+            <div className='text-[14px] hidden md:block font-medium text-slate-400'>
             {course?.coursedescription?.length > 50 
             ? course?.coursedescription.slice(0, 35) + "..." 
             : course?.coursedescription}</div>
@@ -29,8 +29,8 @@ export default function EnrolledCourseCard({course}) {
         {course?.timeduration}
       </div>
       <div className='w-[50%] py-2 flex flex-col justify-center '>
-        <p className=' text-[14px] font-bold text-gray-400'>Progress: {course?.coursecompletedprogress||0}%</p>
-      <ProgressBar completed={course?.coursecompletedprogress} height='14px' width='80%'  bgColor='rgb(50, 210, 230)' labelAlignment='center' isLabelVisible={false}/>
+        <p className=' lg:text-[18px] text-[12px] font-bold text-gray-400'>Progress: {course?.coursecompletedprogress||0}%</p>
+      <ProgressBar completed={course?.coursecompletedprogress} height='12px' width='80%'  bgColor='rgb(50, 210, 230)' labelAlignment='center' isLabelVisible={false}/>
       </div>
     </div>
   )

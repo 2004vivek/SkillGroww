@@ -10,7 +10,7 @@ export default function About() {
       <div className="w-11/12 m-auto  flex flex-col justify-center items-center mt-4">
         {/* section 1 */}
         <section className=" w-full flex flex-col items-center">
-          <div className="xl:w-1/2  w-auto text-white text-2xl xl:text-3xl font-bold mb-3">
+          <div className="xl:w-1/2  w-auto text-white text-[16px] md:text-[17px] xl:text-3xl font-bold mb-3">
             <h3 className="text-center">
               Driving Innovation in Online Education for a{" "}
             </h3>
@@ -18,8 +18,8 @@ export default function About() {
               Brighter Future
             </h3>
           </div>
-          <div className="xl:w-9/12  w-auto text-slate-400 mt-2 md:text-center   mb-5">
-            <p>
+          <div className="xl:w-9/12  w-auto text-slate-400 mt-2 md:text-center mb-5">
+            <p className="text-[13px] md:text-[14px] xl:text-[16px]">
               Study Grow is at forefront of driving in online education.We're
               passionate about creating a brighter future by offering
               cutting-edge courses,leveraging emerging technologies, and
@@ -27,21 +27,21 @@ export default function About() {
             </p>
           </div>
           <div className="w-[95%]  text-slate-400 mt-2 flex   flex-wrap gap-10 xl:gap-0  justify-evenly mb-12">
-            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[250px] h-[250px]  rounded-md overflow-hidden">
+            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[150px] h-[150px]  rounded-md overflow-hidden">
               <img
                 src="about-pic1.jpg"
                 className="w-full h-full"
                 alt="aboutpic1"
               />
             </div>
-            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[250px] h-[250px]  rounded-md overflow-hidden">
+            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[150px] h-[150px]  rounded-md overflow-hidden">
               <img
                 src="about-pic2.png"
                 className="w-full h-full"
                 alt="aboutpic2"
               />
             </div>
-            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[250px] h-[250px]  rounded-md overflow-hidden">
+            <div className="lg:w-[300px] lg:h-[300px] md:w-[250px] md:h-[250px] w-[150px] h-[150px]  rounded-md overflow-hidden">
               <img
                 src="about-pic-3.jpg"
                 className="w-full h-full"
@@ -50,7 +50,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="xl:w-[80%] w-auto text-white text-xl xl:text-3xl font-bold mb-8">
+          <div className="xl:w-[80%] w-auto text-white text-[16px] md:text-[17px] xl:text-3xl font-bold mb-8">
             <h3 className="md:text-center">
               <span >
                 We are passionate about revolutionizing the way we learn.
@@ -79,17 +79,17 @@ export default function About() {
         <section className=" w-11/12 flex flex-col items-center ">
           <div className="w-full  flex md:flex-row flex-col gap-5">
             <div className="md:w-[60%] sm:w-[50%] m-auto">
-              <h3 className="text-2xl xl:text-3xl  bg-gradient-to-r from-red-500 via-yellow-600 to-red-700 bg-clip-text text-transparent font-bold mb-3">
+              <h3 className="text-[16px] md:text-[17px] xl:text-3xl  bg-gradient-to-r from-red-500 via-yellow-600 to-red-700 bg-clip-text text-transparent font-bold mb-3">
                 Our Founding Story
               </h3>
-              <p className="text-slate-400 mb-5 ">
+              <p className="text-slate-400 mb-5 text-[13px] md:text-[14px] xl:text-[16px]">
                 Our e-learning platform emerged from a collective vision and
                 deep commitment to revolutionizing education. It started with
                 educators, technologists, and lifelong learners who identified
                 the need for accessible, adaptable, and high-quality learning
                 opportunities in today's rapidly changing digital landscape.
               </p>
-              <p className="text-slate-400 ">
+              <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
                 As educators, we experienced the challenges of conventional
                 education systems firsthand. We believed learning should not be
                 limited to physical classrooms or constrained by geography. Our
@@ -99,7 +99,7 @@ export default function About() {
               </p>
             </div>
             <div className="md:w-[40%] sm-[50%] m-auto flex justify-end items-center">
-              <div className="lg:h-[220px] lg:w-[370px] sm:h-[190px] sm:w-[340px] relative">
+              <div className="lg:h-[220px] lg:w-[370px] sm:h-[150px] sm:w-[320px] relative">
                 <img
                   src="vision.jpg"
                   alt="vision"
@@ -109,12 +109,12 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-full  flex flex-wrap justify-center items-center mt-24 mb-10 ">
+          <div className="w-full  flex flex-wrap justify-center items-center mt-10 mb-10 ">
             <div className="md:w-1/2 w-auto pr-4">
-              <h3 className="text-2xl xl:text-3xl  bg-gradient-to-t from-orange-500  via-yellow-300 to-orange-700 bg-clip-text text-transparent font-bold mb-4">
+              <h3 className="text-[16px] md:text-[17px] xl:text-3xl  bg-gradient-to-t from-orange-500  via-yellow-300 to-orange-700 bg-clip-text text-transparent font-bold mb-4">
                 Our Vision
               </h3>
-              <p className="text-slate-400 mb-5 ">
+              <p className="text-slate-400 mb-5 text-[13px] md:text-[14px] xl:text-[16px]">
                 Our online learning platform was created with a shared vision
                 and strong dedication to transforming education. It began with a
                 team of educators, technology experts, and lifelong learners who
@@ -124,10 +124,10 @@ export default function About() {
               </p>
             </div>
             <div className="md:w-1/2 w-auto">
-              <h3 className="text-2xl xl:text-3xl  bg-gradient-to-r from-sky-500 via-slate-300 to-blue-700 bg-clip-text text-transparent font-bold mb-4">
+              <h3 className="text-[16px] md:text-[17px] xl:text-3xl  bg-gradient-to-r from-sky-500 via-slate-300 to-blue-700 bg-clip-text text-transparent font-bold mb-4">
                 Our Mission
               </h3>
-              <p className="text-slate-400 md:mb-5 ">
+              <p className="text-slate-400 md:mb-5 text-[13px] md:text-[14px] xl:text-[16px]">
                 Our mission extends far beyond simply offering online courses.
                 We aim to build an active and dynamic learning community where
                 individuals can connect, work together, and grow by learning
@@ -151,8 +151,8 @@ export default function About() {
         {/* section5 */}
         <section className=" w-full flex flex-col items-center justify-center mt-10">
         <div className="md:w-1/2 w-auto">
-        <h3 className="text-2xl xl:text-3xl  text-white text-center font-semibold mb-4">Get In Touch</h3>
-        <p className="text-slate-400 md:text-center text-left mb-4">We'd love to here from you.Please fill out this form</p>
+        <h3 className="text-[16px] xl:text-3xl  text-white text-center font-semibold mb-4">Get In Touch</h3>
+        <p className="text-slate-400 md:text-center text-left mb-4 text-[13px] md:text-[14px] xl:text-[16px]">We'd love to here from you.Please fill out this form</p>
         <ContactUs/>
         </div>
         </section>

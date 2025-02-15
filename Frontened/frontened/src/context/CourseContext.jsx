@@ -79,6 +79,14 @@ export const CourseContextProvider = ({ children }) => {
 
     const [showreviewmodal,setshowreviewmodal]=useState(false);
 
+    const [instructorcourse,setinstructorcourse]=useState(null)
+
+    const [instructortotalrevenue,setinstructortotalrevenue]=useState('');
+
+    const [totalenrolled,settotalenrolled]=useState('');
+
+    const [totalcourse,settotalcourse]=useState('')
+
     const courseCreationHandler=(data)=>{
       console.log("data",data)
       setcoursecreation({...coursecreation,data});
@@ -158,7 +166,7 @@ export const CourseContextProvider = ({ children }) => {
 
     
     const value={
-      allcourses,setallcourses,position,setposition,coursecreation,setcoursecreation,courseCreationHandler,editcourse,seteditcourse,course,setcourse,loader,setloader,editsection,seteditsection,sectionid,setsectionid,showsubsectionmodal,setshowsubsectionmodal,addsubsection,setaddsubsection,subsectionlist,setsubsectionlist,subsectionid,setsubsectionid,imagepreview, setimagepreview,modaldata,setmodaldata,edit,setedit,editsubsection,seteditsubsection,viewsubsection,setviewsubsection,status,setstatus,showdeleteshowmodal,setshowdeleteshowmodal,courseid,setcourseid,getCategoryPageHandler,allcategory,setallcategory,differentcategory,setdifferentcategory,topcategory,settopcategory,deletedcourseid,setdeletedcourseid,coursedata,setcoursedata,AddtoCart,cartitem,setcartitem,removeCarthandler,totalprice,settotalprice,discountprice,setdiscountprice,videopreview,setvideopreview,markcompleted,setmarkcompleted,rewatch,setrewatch,completedsubsectionid,setcompletedsubsectionid,completedvideo,setcompletedvideo,totalsubsection,settotalsubsection,showreviewmodal,setshowreviewmodal 
+      allcourses,setallcourses,position,setposition,coursecreation,setcoursecreation,courseCreationHandler,editcourse,seteditcourse,course,setcourse,loader,setloader,editsection,seteditsection,sectionid,setsectionid,showsubsectionmodal,setshowsubsectionmodal,addsubsection,setaddsubsection,subsectionlist,setsubsectionlist,subsectionid,setsubsectionid,imagepreview, setimagepreview,modaldata,setmodaldata,edit,setedit,editsubsection,seteditsubsection,viewsubsection,setviewsubsection,status,setstatus,showdeleteshowmodal,setshowdeleteshowmodal,courseid,setcourseid,getCategoryPageHandler,allcategory,setallcategory,differentcategory,setdifferentcategory,topcategory,settopcategory,deletedcourseid,setdeletedcourseid,coursedata,setcoursedata,AddtoCart,cartitem,setcartitem,removeCarthandler,totalprice,settotalprice,discountprice,setdiscountprice,videopreview,setvideopreview,markcompleted,setmarkcompleted,rewatch,setrewatch,completedsubsectionid,setcompletedsubsectionid,completedvideo,setcompletedvideo,totalsubsection,settotalsubsection,showreviewmodal,setshowreviewmodal ,instructorcourse,setinstructorcourse,instructortotalrevenue,setinstructortotalrevenue,totalenrolled,settotalenrolled,totalcourse,settotalcourse
     }
   return (
     <CourseContext.Provider value={value}>{children}</CourseContext.Provider>

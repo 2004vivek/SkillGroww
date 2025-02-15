@@ -20,7 +20,7 @@ export default function Sidebar() {
     const navigate=useNavigate()
   
   return (
-    <div className='min-w-[250px] p-2  bg-slate-900 '>
+    <div className='min-w-[250px] lg:p-2 px-5 max-lg:flex gap-4 overflow-x-auto  custom-scrollbar bg-slate-900 '>
       {
         sidebardata.map((data, index) => {
             if (data.path === role ||  !data.path) {
@@ -32,8 +32,8 @@ export default function Sidebar() {
                     seteditcourse(false)
                                 }
                                     }}>
-                    <div>{data.icons}</div>
-                    <div>{data.name}</div>
+                    <div className='text-[14px]'>{data.icons}</div>
+                    <div className='text-[14px] truncate'>{data.name}</div>
                   </div>
                 </Link>
               );
@@ -41,17 +41,17 @@ export default function Sidebar() {
             return null; 
           })
       }
-      <div className='w-11/12 m-auto border-[0.2px] rounded-md border-slate-700'></div>
+      <div className='lg:w-11/12 w-0 m-auto border-[0.2px] rounded-md border-slate-700'></div>
 
      { 
      [{"name":"Settings","route":"/dashboard/setting","icons":<IoIosSettings fontSize="18px"/>}].map((data)=>(
-      <Link to={data.route}><div className={`flex cursor-pointer gap-2 items-center w-full h-[44px] ${location.pathname===data.route?"bg-gradient-to-r from-blue-400 to-blue-600 text-white font-bold shadow-lg border-l-4": "text-gray-400 hover:text-white"} my-5 px-2 items-center`}><span>{data.icons}</span><span>{data.name}</span></div></Link>
+      <Link to={data.route}><div className={`flex cursor-pointer gap-2 items-center w-full h-[44px] ${location.pathname===data.route?"bg-gradient-to-r from-blue-400 to-blue-600 text-white font-bold shadow-lg border-l-4": "text-gray-400 hover:text-white"} my-5 px-2 items-center`}><span className='text-[14px]'>{data.icons}</span><span className='text-[14px]'>{data.name}</span></div></Link>
      ))
      }
 
      {
        [{"name":"Logout","icons":<RiLogoutBoxRLine  fontSize="18px"/> }].map((data)=>(
-        <div className={`flex gap-2 cursor-pointer w-full h-[44px] ${location.pathname===data.route?"bg-gradient-to-r from-blue-400 to-blue-600 text-white font-bold shadow-lg border-l-4": "text-gray-400 hover:text-white"} my-5 px-2 items-center`} onClick={()=>setshowmodal(true)}><span>{data.icons}</span><span>{data.name}</span></div>
+        <div className={`flex gap-2 cursor-pointer w-full h-[44px] ${location.pathname===data.route?"bg-gradient-to-r from-blue-400 to-blue-600 text-white font-bold shadow-lg border-l-4": "text-gray-400 hover:text-white"} my-5 px-2 items-center`} onClick={()=>setshowmodal(true)}><span className='text-[14px]'>{data.icons}</span><span className='text-[14px]'>{data.name}</span></div>
        ))
      }
      <ConfirmationModal showmodal={showmodal} onclose={()=>setshowmodal(false)} heading={"Are You Sure ?"} content={"You Will be Logged out of your Account."} btn1text={"Logout"} btn2text={"Cancel"} btn1handler={()=>logoutHandler(navigate)} btn2handler={()=>setshowmodal(false)}/>

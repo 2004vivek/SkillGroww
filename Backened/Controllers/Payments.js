@@ -1,5 +1,5 @@
 const stripe = require("stripe")("sk_test_51QSifpEZj9co3L2BGyHY7nCra6SENwl9z5NwPewnhEwkO3hHxWSBH9kCLmRJi0SjluQc5vxXY2aaKllXg4d0bRAJ00SVDzvpcM");
-const webhooksecret='whsec_iAUYEBLIiPqDVkJ3O33Ffv1c0T88CFy0'
+const webhooksecret='whsec_EmgKQlEzta4EnvtPD4YDqYX5dVeutkvN'//i need to change later because i had written temporialy
 const Course=require('../Modals/Course')
 const User=require('../Modals/User')
 const Cart=require('../Modals/Cart')
@@ -44,8 +44,8 @@ exports.orderCreate=async(req,res)=>{
               userid:userid?.toString(),
               cartitemid:cartitemid?.toString()
             },
-            success_url: "https://skill-groww.vercel.app",
-            cancel_url: "https://skill-groww.vercel.app"
+            success_url: "http://localhost:5173/",
+            cancel_url: "http://localhost:5173/"
           });
 
           return res.json({id:session.id})
@@ -86,6 +86,7 @@ exports.verifySignature=async(req,res)=>{
                   console.log(`Checkout session completed for session ID: ${session.id}`);
 
                   const courseid=JSON.parse(session.metadata.courseids)
+                  console.log("this is courseid",courseid)
                   const userids=session.metadata.userid
                   const cartid=session.metadata.cartitemid
                  
@@ -101,7 +102,7 @@ exports.verifySignature=async(req,res)=>{
                  }              
 
                   break;
-            
+
                 default:
                   console.log(`Unhandled event type ${event.type}.`);
               }
@@ -130,14 +131,14 @@ const EnrollUser=async(courseId,userids)=>{
     }
 
     //find the course and enroll a user to it
-    const enrolledcourse=await Course.findByIdAndUpdate(courseId,{$push:{studentEnrolled:userids}},{new:true})
+    const enrolledcourse=await Course.findByIdAndUpdate(courseId,{$addToSet:{studentEnrolled:userids}},{new:true})
 
     if(!enrolledcourse){
       throw new Error("No course found");
-    }
+    }    
 
-    //update the User schema in which user is enrolled to it
-    const userenrolledcourses=await User.findByIdAndUpdate({_id:userids},{$push:{courses:courseId}},{new:true})
+    //update the User schema in which user is enrolled to it 
+    const userenrolledcourses=await User.findByIdAndUpdate({_id:userids},{$addToSet:{courses:courseId}},{new:true})
 
     //send a email
     await mailsender(userenrolledcourses.email,`Successfully Enrolled for ${enrolledcourse?.coursename}`,"You can view your Enrolled Courses in Enrolled COurse Page.Thank Your for Trust.Hoping a best for your carrier.")

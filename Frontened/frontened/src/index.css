@@ -8,7 +8,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 15px; 
+  width: 10px; 
 }
 
 ::-webkit-scrollbar-thumb {
@@ -19,6 +19,12 @@
 ::-webkit-scrollbar-track {
   background: #333; 
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px; 
+}
+
 
 /* this css for otp verify */
 @media (max-width: 768px) {
@@ -50,5 +56,15 @@ position: relative;
 z-index: 99999 ;
 }
 
+
+.swiper-pagination-bullet {
+  background-color: white !important; 
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ffcc00 !important; 
+  opacity: 1;
+}
 
 

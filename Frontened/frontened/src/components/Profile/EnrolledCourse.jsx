@@ -20,8 +20,8 @@ export default function EnrolledCourse() {
           }
         }
       )
-      console.log("this is reponse",response?.data)
-      setenrolledcourse(response?.data?.userdetails);
+      console.log("this is enrolled course data",response?.data)
+      setenrolledcourse(response?.data?.userdenrolled);
     } catch (error) {
       console.log(error?.response?.data||error?.message)
     }
@@ -31,12 +31,12 @@ export default function EnrolledCourse() {
   }
 
   useEffect(() => {
-   getEnrolledCourses()
+   getEnrolledCourses();
   }, [])
   
   return (
     <div className='text-white text-2xl w-full m-auto '>
-        <h3 className='text-white lg:text-3xl font-bold '>Enrolled Courses</h3>
+        <h3 className='text-white lg:text-3xl md:text-[20px] text-[18px] font-bold '>Enrolled Courses</h3>
         {
           loading?(<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-900 text-yellow-500 bg-opacity-50 z-50">Loading...</div>):(
           <>
@@ -44,10 +44,10 @@ export default function EnrolledCourse() {
             enrolledcourse?.length===0?(<div className='mt-6'>No course is enrolled</div>):
             (
               <>
-              <div className='w-full flex mt-6 bg-gray-400/20 px-4 rounded'>
-              <div className='w-[60%] text-[16px] font-bold py-2'>Course Name</div>
-              <div className='w-1/2 text-[16px] font-bold py-2'>Duration</div>
-              <div className='w-1/2  text-[16px] font-bold py-2'>Progress Bar</div>
+              <div className='md:w-full flex  mt-6 bg-gray-400/20 px-4 rounded max-md:justify-between'>
+              <div className='md:w-[60%] lg:text-[16px] text-[14px] font-bold py-2'>Course Name</div>
+              <div className='md:w-1/2 lg:text-[16px] text-[14px] hidden md:block font-bold py-2'>Duration</div>
+              <div className='md:w-1/2  lg:text-[16px] text-[14px] font-bold py-2 justify-between'>Progress Bar</div>
             </div>
              <div className='w-full mt-4'>
               {
