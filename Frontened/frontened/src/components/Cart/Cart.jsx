@@ -16,6 +16,7 @@ export default function Cart() {
   const {cartitem,setcartitem,settotalprice,totalprice,discountprice,setdiscountprice,loader,setloader} = useContext(CourseContext);
 
   let baseurl = import.meta.env.VITE_API_BASE_URL;
+  console.log("this is baseurl",baseurl)
 
   const getallcart = async () => {
     try {
@@ -60,7 +61,7 @@ export default function Cart() {
 
   const handlePayment = async () => {
     try {
-      const stripe = await loadStripe("your-stripe-public-key-here");
+      const stripe = await loadStripe("pk_test_51QSifpEZj9co3L2BbdcWAV8hYQoauxstmYUoTk1c2qsXoB1jhMDM5aix7ymmLGwQ4cgLQhG23ZlVPXDpqCJvenSP00vU5n6CpL");
 
       const response = await axios.post(
         `${baseurl}/api/v1/payment/transaction`,
