@@ -44,8 +44,8 @@ exports.orderCreate=async(req,res)=>{
               userid:userid?.toString(),
               cartitemid:cartitemid?.toString()
             },
-            success_url: "https://skill-groww-git-vivek-2004viveks-projects.vercel.app/",
-            cancel_url: "https://skill-groww-git-vivek-2004viveks-projects.vercel.app/"
+            success_url: "https://skill-groww.vercel.app/",
+            cancel_url: "https://skill-groww.vercel.app/"
           });
 
           return res.json({id:session.id})
