@@ -23,7 +23,8 @@ app.options("*", cors());
 app.use(cookieparser())
 
 app.use(cors({
-    origin:"https://skill-groww-git-vivek-2004viveks-projects.vercel.app",
+    origin:"https://skill-groww.vercel.app",
+    // origin:"http://localhost:5173",
     credentials:true
 }))
 
@@ -39,7 +40,7 @@ const courseprogress=require('./Routes/CourseProgress')
 app.use(fileupload({
     useTempFiles:true,
     tempFileDir:"/tmp/"
-}))
+}))  
 
 const {connecttocloudinary}=require('./config/cloudinary')
 connecttocloudinary() 
