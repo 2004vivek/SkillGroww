@@ -12,13 +12,17 @@ export default function ViewCourse() {
   const {loader,setloader,videopreview,setvideopreview,coursedata,setcoursedata,completedvideo,setcompletedvideo,totalsubsection,settotalsubsection}=useContext(CourseContext);
 
   const {id}=useParams();
+  const userdetails=JSON.parse(localStorage.getItem("usertype"))
+  let userid=userdetails._id;
+  console.log("this is userid",userid)
 
    //fetching course details
       const fetchingCourseDetails=async()=>{
           try {
             setloader(true)
                const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/course/getcoursedetails`,{
-                  courseid:id
+                  courseid:id,
+                  userid:userid
                 })
                 console.log("this is course details",response?.data);
                 setcoursedata(response?.data?.coursedetails);

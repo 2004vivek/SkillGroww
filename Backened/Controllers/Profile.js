@@ -190,7 +190,7 @@ exports.getenrolledcourses = async (req, res) => {
         totalvideos += section?.subsection?.length || 0;
       }
 
-      console.log("this is total video",totalvideos)
+      // console.log("this is total video",totalvideos)
       console.log("this is courseid",course._id)
 
       //calculating the completed video
@@ -202,9 +202,10 @@ exports.getenrolledcourses = async (req, res) => {
       console.log("this is progress report",progress)
       let courseprogress = progress?.completedvideo?.length || 0;
 
+
      
 
-      let coursecompletedprogress = totalvideos > 0 ? (courseprogress / totalvideos) * 100 : 0;
+      let coursecompletedprogress = courseprogress > 0 ? (courseprogress / totalvideos) * 100 : 0;
 
 
       // userdetail.coursecompletedprogress= Math.round(coursecompletedprogress)
