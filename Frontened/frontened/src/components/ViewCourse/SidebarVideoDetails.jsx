@@ -61,7 +61,7 @@ export default function SidebarVideoDetails({ totalsubsection }) {
 
   return (
     <>
-      <div className="min-w-[250px] p-2  bg-slate-900 ">
+      <div className="xl:min-w-[250px] w-[150px] p-2  bg-slate-900 ">
         <div className="w-full mt-2 flex justify-between">
           <span>
              <IoArrowBackCircleOutline

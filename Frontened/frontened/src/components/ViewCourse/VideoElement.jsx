@@ -41,7 +41,7 @@ export default function VideoElement() {
      }
      
   return (
-    <div className='relative w-[1250px] h-[500px]'>
+    <div className='relative xl:w-[1250px] xl:h-[500px] w-[650px] h-[250px]'>
       <ReactPlayer 
         url={videopreview} 
         ref={playerposition}
