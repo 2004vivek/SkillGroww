@@ -6,7 +6,7 @@ import { FaPlayCircle } from "react-icons/fa";
 import axios from 'axios';
 import { toast } from 'react-toastify';
 export default function VideoElement() {
-     const {coursedata,setcoursedata,videopreview,markcompleted,setmarkcompleted,rewatch,setrewatch,completedsubsectionid,setcompletedsubsectionid,setcompletedvideo}=useContext(CourseContext);     
+     const {coursedata,setcoursedata,videopreview,markcompleted,setmarkcompleted,rewatch,setrewatch,completedsubsectionid,setcompletedsubsectionid,setcompletedvideo,completedvideo}=useContext(CourseContext);     
 
      let playerposition=useRef(null);
 
@@ -33,6 +33,8 @@ export default function VideoElement() {
         toast.success(response?.data?.message)
         setmarkcompleted(false);
         setcompletedvideo((prev)=>Array.isArray(prev)?[...prev,completedsubsectionid]:[completedsubsectionid])
+        
+          console.log("this is completed video",completedvideo)
         setrewatch(false)
       } catch (error) {
         console.log("errorrr!",error?.response?.data||error?.message)
