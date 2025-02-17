@@ -30,7 +30,7 @@ app.use(cors({
 
 
 const userroute=require('./Routes/User')
-const profileroute=require('./Routes/Profile')
+const profileroute=require('./Routes/Profile') 
 const paymentroute=require('./Routes/Payments')
 const courseroute=require('./Routes/Course')
 const cartroute=require('./Routes/Cart')

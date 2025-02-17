@@ -11,6 +11,7 @@ export default function VideoElement() {
      let playerposition=useRef(null);
 
      const token=localStorage.getItem("token")
+     console.log("this is completed video",completedvideo)
      
 
      console.log("this is subsectionid",completedsubsectionid)
@@ -34,9 +35,10 @@ export default function VideoElement() {
         setmarkcompleted(false);
         setcompletedvideo((prev)=>Array.isArray(prev)?[...prev,completedsubsectionid]:[completedsubsectionid])
         
-          console.log("this is completed video",completedvideo)
+        
         setrewatch(false)
       } catch (error) {
+        
         console.log("errorrr!",error?.response?.data||error?.message)
         toast.error(error?.response?.data?.message||error?.message)
       }

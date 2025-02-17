@@ -248,7 +248,7 @@ exports.deletecourse=async(req,res)=>{
 exports.getcoursedetails=async(req,res)=>{
     try {
         //get id 
-        const {courseid}=req.body
+        const {courseid,userid}=req.body
         
         //find course details
         const coursedetails=await Course.findById({_id:courseid}).populate({
@@ -280,7 +280,7 @@ exports.getcoursedetails=async(req,res)=>{
             })
         }
 
-        let courseprogress=await CourseProgress.findOne({courseId:courseid});
+        let courseprogress=await CourseProgress.findOne({courseId:courseid,userId:userid});
         let completedvideoes=courseprogress?.completedvideo
 
 
