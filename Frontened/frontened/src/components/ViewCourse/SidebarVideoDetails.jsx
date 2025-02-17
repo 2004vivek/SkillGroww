@@ -27,6 +27,7 @@ export default function SidebarVideoDetails({ totalsubsection }) {
 
   const navigate = useNavigate();
 
+
   const [showsection, setshowsection] = useState(null);
   
   //bydefault first lecture will be displayed
@@ -36,7 +37,7 @@ export default function SidebarVideoDetails({ totalsubsection }) {
     setvideopreview(videourl);
     setshowsection(subsectionid);
 
-    console.log("this is subsection id inside useffect", subsectionid);
+    // console.log("this is subsection id inside useffect", subsectionid);
     setmarkcompleted(false);
     setrewatch(false)
   }, [completedvideo]);

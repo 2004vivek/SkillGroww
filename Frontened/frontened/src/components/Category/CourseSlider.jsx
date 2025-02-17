@@ -21,7 +21,9 @@ export default function CourseSlider({course}) {
   const calculateAverageRating=(ratingandreview)=>{
    let totalrating= ratingandreview.reduce((sum,rate)=>parseFloat(rate.rating)+sum,0)
    console.log("this is totalrating",totalrating)
-   return ratingandreview?.length>0 ? totalrating/ratingandreview?.length:0
+   let average = ratingandreview?.length > 0 ? totalrating / ratingandreview?.length : 0;
+
+   return parseFloat(average.toFixed(2));  
   }
   return (
     <div className='text-white'>
