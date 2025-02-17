@@ -97,9 +97,9 @@ exports.verifySignature=async(req,res)=>{
                 }
 
                  //removing an item from a cart
-                 if(cartid){
+                //  if(cartid){
                    await RemoveCartItem(cartid)
-                 }              
+                //  }              
 
                   break;
 
