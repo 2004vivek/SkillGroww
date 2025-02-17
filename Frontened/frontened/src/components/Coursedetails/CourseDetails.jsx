@@ -29,16 +29,7 @@ export default function CourseDetails() {
             settotalsubsection(lecture)
     },[coursedata])
 
-    // const [totalnooflecture,setnooflecture]=useState(0);
-
-    // useEffect(()=>{
-    //     let lecture=0;
-    //     coursedata?.coursecontent?.forEach(section => {
-    //         lecture=lecture+section?.subsection?.length||0
-    //     });
-    //     setnooflecture(lecture)
-    // },[coursedata])
-
+    
     const fetchingCourseDetails=async()=>{
         try {
              const response=await axios.post(`https://skillgroww-1.onrender.com/api/v1/course/getcoursedetails`,{
