@@ -22,6 +22,7 @@ import Category from "./components/Category/Category";
 import CourseDetails from "./components/Coursedetails/CourseDetails";
 import ViewCourse from "./components/ViewCourse/ViewCourse";
 import VideoElement from "./components/ViewCourse/VideoElement";
+import InstructorDashboard from "./components/InstructorDashboard/InstructorDashboar";
 
 function App() {
   const usertype = JSON.parse(localStorage.getItem("usertype"));
@@ -50,6 +51,8 @@ function App() {
           >
             <Route path="/dashboard/my-profile" element={<Myprofile />} />
             <Route path="/dashboard/setting" element={<Settings />} />
+            <Route path="/dashboard/instructor" element={<InstructorDashboard/>}/>
+
 
             <Route path="/dashboard/enrolled-course/:id" element={<EnrolledCourse />}/>
             <Route path="/dashboard/cart" element={<Cart />} />

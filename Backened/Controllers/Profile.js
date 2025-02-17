@@ -158,71 +158,6 @@ exports.updatedisplaypicture = async (req, res) => {
     });
   }
 };
-// exports.getenrolledcourses = async (req, res) => {
-//     try {
-//         const userid = req.params.id;
-
-//         // Find the user and populate courses
-//         const userDetails = await user.findById(userid).populate({path: "courses", populate: {  path: "coursecontent", populate: {  path: "subsection" // Populate subsection inside coursecontent
-//             }
-//         }
-//     })
-//     .exec();
-
-//         console.log("this is enrolled course data",userDetails)
-
-//         // Check if the user exists
-//         if (!userDetails) {
-//             return res.status(400).json({
-//                 success: false,
-//                 message: "User Not Found"
-//             });
-//         }
-
-//         // Array to store course details along with progress
-//         const coursesWithProgress = await Promise.all(userDetails.courses.map(async (course) => {
-//             let totalVideos = 0;
-
-//             // Count total videos in the course
-//             course.coursecontent.forEach((section) => {
-//                 totalVideos += section?.subsection?.length || 0;
-//             });
-
-//             // Find the user's progress for this course
-//             const progress = await CourseProgress.findOne({
-//                 courseId: course._id,
-//             });
-//             console.log("this is pogress",progress)
-
-//             // Count completed videos
-//             const completedVideos = progress?.completedvideo?.length || 0;
-
-//             // Calculate progress percentage
-//             const progressPercentage = totalVideos > 0 ? (completedVideos / totalVideos) * 100 : 0;
-
-//             console.log("this is progress percentage",progressPercentage)
-
-//             return {
-//                 ...course.toObject(), // Convert Mongoose document to plain object
-//                 totalVideos,
-//                 completedVideos,
-//                 progressPercentage: Math.round(progressPercentage) // Round to nearest integer
-//             };
-//         }));
-
-//         return res.status(200).json({
-//             success: true,
-//             enrolledCourses: coursesWithProgress
-//         });
-
-//     } catch (error) {
-//         return res.status(500).json({
-//             success: false,
-//             message: "Error While Fetching the Course Details",
-//             error: error.message
-//         });
-//     }
-// };
 
 exports.getenrolledcourses = async (req, res) => {
   try {
@@ -245,7 +180,7 @@ exports.getenrolledcourses = async (req, res) => {
 
     //logic for finding courseprogress for each course
     let updatedcourse = [];
-
+    let userdetail;
     for (const course of userdetails?.courses) {
       let totalvideos = 0;
       let completedvideo = 0;
@@ -255,26 +190,35 @@ exports.getenrolledcourses = async (req, res) => {
         totalvideos += section?.subsection?.length || 0;
       }
 
+      console.log("this is total video",totalvideos)
+      console.log("this is courseid",course._id)
+
       //calculating the completed video
       const progress = await CourseProgress?.findOne({
         courseId: course._id,
+        userId:userid,
       });
-
+      
+      console.log("this is progress report",progress)
       let courseprogress = progress?.completedvideo?.length || 0;
 
-      let coursecompletedprogress =
-        totalvideos > 0 ? (courseprogress / totalvideos) * 100 : 0;
+     
 
+      let coursecompletedprogress = totalvideos > 0 ? (courseprogress / totalvideos) * 100 : 0;
+
+
+      // userdetail.coursecompletedprogress= Math.round(coursecompletedprogress)
       updatedcourse.push({
         ...course.toObject(),
         coursecompletedprogress: Math.round(coursecompletedprogress),
       });
     }
 
-    console.log("this is userdetails", userdetails);
+    // console.log("this is userdetails", userdetails);
     return res.status(200).json({
       success: true,
-      userdetails: updatedcourse,
+      userdenrolled:updatedcourse,
+      // userdetails: updatedcourse,
     });
   } catch (error) {
     return res.status(500).json({
@@ -284,3 +228,36 @@ exports.getenrolledcourses = async (req, res) => {
     });
   }
 };
+
+exports.InstructorDashboard=async(req,res)=>{
+  try {
+   let User= await user.findById({_id:req.user.id}).populate({path:"courses",populate:{path:"studentEnrolled"}});
+   
+   let totalcourses=User?.courses?.length;
+   let totalstudent=User?.courses?.reduce((sum,course)=>course.studentEnrolled.length+sum,0)
+
+  let price= User?.courses?.reduce((sum,course)=>parseInt(course.price)+sum,0)
+   let totalamountrecieve=totalcourses*price
+   console.log("this is totalcourse bhai",totalcourses);
+   console.log("this is pricr",totalamountrecieve)
+   console.log("this is totalstudent",totalstudent)
+  //  console.log("this is user bhai",price);
+
+
+   return res.status(200).json({
+    success:true,
+    Courses:User?.courses,
+    totalcourses,
+    totalstudent,
+    totalamountrecieve,
+    message:"instructor dashboard fetched successfully" 
+   })
+    
+  } catch (error) {
+    return res.status(500).json({
+      success:false, 
+      message:"error while fetching instructor dashboard",
+      error:error.message
+    })
+  }
+}

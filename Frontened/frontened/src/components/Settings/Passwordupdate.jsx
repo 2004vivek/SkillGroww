@@ -57,19 +57,19 @@ export default function Passwordupdate() {
        {loading&&<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-900 text-yellow-500 bg-opacity-50 z-50">Loading...</div>}
     <div className="w-full bg-slate-900 mt-4">
             <div className="w-11/12 m-auto">
-        <h3 className="text-white text-[18px] py-5 font-bold">
+        <h3 className="text-white md:text-[18px] text-[15px] py-5 font-bold">
           Password
         </h3>
-        <div className="w-11/12 ">
+        <div className="md:w-11/12 ">
           <form
             action=""
             onSubmit={handleSubmit(profileFormHandler)}
             className="w-full "
           >
-            <table className="w-[90%] border-separate border-spacing-3">
+            <table className="md:w-[90%] border-separate border-spacing-3">
               <tr>
-                <th className="text-[15px] font-bold">Current Password</th>
-                <th className="text-[15px] font-bold">New Password</th>
+                <th className="md:text-[15px] text-[12px] font-bold">Current Password</th>
+                <th className="md:text-[15px] text-[12px] font-bold">New Password</th>
               </tr>
               <tr>
                 <td>
@@ -94,12 +94,12 @@ export default function Passwordupdate() {
               </tr>
              
             </table>
-            <div className="flex w-[110%] justify-end gap-4 mt-4">
-     <button type="button" className="btn bg-gray-300 text-black font-bold px-3 py-1 rounded hover:bg-gray-600" onClick={()=>navigate("/dashboard/my-profile")}>
+            <div className="flex md:w-[110%] pb-4 justify-end gap-4 mt-4">
+     <button type="button" className="btn bg-gray-300 text-black font-bold px-3 py-1 max-md:text-[12px] rounded hover:bg-gray-600" onClick={()=>navigate("/dashboard/my-profile")}>
          Cancel
        </button>
        
-       <button type="submit"  className="btn bg-yellow-500 text-black font-bold px-3 py-1 rounded hover:bg-yellow-600">
+       <button type="submit"  className="btn max-md:text-[12px] bg-yellow-500 text-black font-bold px-3 py-1 rounded hover:bg-yellow-600">
          Update
        </button>
  

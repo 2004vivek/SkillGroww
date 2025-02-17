@@ -1,10 +1,9 @@
 const express=require('express')
 const router=express.Router();
-const {updateProfile,deleteaccount,getalluserdetails,updatedisplaypicture,getenrolledcourses}=require('../Controllers/Profile')
+const {updateProfile,deleteaccount,getalluserdetails,updatedisplaypicture,getenrolledcourses,InstructorDashboard}=require('../Controllers/Profile')
 const {auth}=require('../Middleware/Auth')
 
 //update the user profile
-
 router.put("/updateprofile",auth,updateProfile)
 
 //delete the user profile
@@ -18,5 +17,9 @@ router.get("/get-enrolled-courses/:id",auth,getenrolledcourses)
 
 //update the user display pic
 router.put("/update-pic",auth,updatedisplaypicture)
+
+
+router.get("/instructor-dashboard",auth,InstructorDashboard)
+
 
 module.exports=router

@@ -10,7 +10,7 @@ export default function Category() {
 
     console.log("this is top category",topcategory)
     console.log("this is all category",allcategory)
-    console.log("this is different category",differentcategory)
+    console.log("this is different categories",differentcategory)
     // useEffect(()=>{
     //     getAverageRating();
     // },[])
@@ -39,14 +39,14 @@ export default function Category() {
     <Navbar/>
     <div className='text-white w-full bg-slate-800'>
         <div className='w-[85%] m-auto space-y-3 mt-4 py-4'>
-            <p className='font-bold'>Home / Category / <span className='text-yellow-400'>{allcategory?.name}</span></p>
-            <p className='text-2xl font-bold'>{allcategory?.name}</p>
-            <p>{allcategory?.description}</p>
+            <p className='font-bold text-[14px] md:text-[16px]'>Home / Category / <span className='text-yellow-400'>{allcategory?.name}</span></p>
+            <p className='text-[18px] font-bold'>{allcategory?.name}</p>
+            <p className='text-[14px] md:text-[16px]'>{allcategory?.description}</p>
         </div>
     
     </div >
     <div  className='w-[85%] m-auto mt-4'>
-        <div className='text-yellow-500 text-2xl font-bold'>Courses to get you started</div>
+        <div className='text-yellow-500 text-[18px] md:text-2xl font-bold'>Courses to get you started</div>
 
         {/* selected course */}
         <div>
@@ -55,14 +55,14 @@ export default function Category() {
 
         {/* top Courses */}
         <div>
-        <div className='text-yellow-500 text-2xl font-bold mt-10'>Top Categories</div>
+        <div className='text-yellow-500 text-2xl text-[18px] md:text-2xl font-bold mt-10'>Top Categories</div>
 
         <CourseSlider course={topcategory?.course}></CourseSlider>
         </div>
 
         {/* Different Courses */}
         <div>
-        <div className=' text-2xl font-bold mt-10 text-yellow-500'>More Categories</div>
+        <div className=' text-2xl font-bold mt-10 text-[18px] md:text-2xl text-yellow-500'>More Categories</div>
         {
             differentcategory?.map((course)=>(
                 // console.log("this is course",course.course)

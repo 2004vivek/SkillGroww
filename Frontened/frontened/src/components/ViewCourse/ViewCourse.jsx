@@ -53,11 +53,7 @@ export default function ViewCourse() {
       <>
           <div className='min-h-[85vh] flex '>
           <SidebarVideoDetails totalsubsection={totalsubsection}/>
-          {/* <div className='w-[calc(100vw-3rem)] border overflow-auto'>
-              <div className='w-11/12 mx-auto max-w-[1000px] py-10'>
-              <Outlet/>
-              </div>
-              </div> */}
+         
       </div>
       <div className='w-full flex justify-center items-center'><VideoElement></VideoElement></div>
       </>

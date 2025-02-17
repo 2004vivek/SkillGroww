@@ -64,19 +64,19 @@ export default function Settings() {
     <>
     {loading&&<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-900 text-yellow-500 bg-opacity-50 z-50">Loading...</div>}
     <div className='text-2xl text-white w-full m-auto '>
-       <h3 className='text-white lg:text-3xl font-bold'>My Profile</h3>
+       <h3 className='text-white  text-2xl md:text-3xl  font-bold'>My Profile</h3>
         <div className='w-full flex justify-between bg-slate-900 p-5 mt-4 items-center'>
                <div className='flex gap-2  '>
-                   <div className='rounded-full  h-24 w-24  overflow-hidden m-2'><img src={imageUrl} alt="user-image" className='w-full h-full'/></div>
+                   <div className='rounded-full  md:h-24 md:w-24 h-20 w-20  overflow-hidden m-2'><img src={imageUrl} alt="user-image" className='w-full h-full'/></div>
                    <div>
-                   <div className='text-white text-[18px] font-bold flex flex-col '>
+                   <div className='text-white md:text-[18px] text-[14px] font-bold flex flex-col '>
                     <div><span>Change Your Profile</span></div>
                    <div className='flex gap-2 mt-2'>
                     {/* labelfor is used to link the input tag  */}
                     <input type="file" className='hidden' id='fileinput' onChange={(e)=>{setfile(e.target.files[0])}}/>
-                    <label htmlFor="fileinput" className='text-[16px] px-2 bg-slate-400/50 text-white font-semibold rounded-lg cursor-pointer'>{file!==null?file.name:"Choose File"}</label>
+                    <label htmlFor="fileinput" className='md:text-[16px] max-md:text-[12px] px-2 bg-slate-400/50 text-white font-semibold rounded-lg cursor-pointer'>{file!==null?file.name:"Choose File"}</label>
                     <div className='px-2 bg-yellow-400 text-black font-semibold rounded-lg cursor-pointer' onClick={ImageUploader}>
-                          <span className='flex text-[16px] place-items-center gap-2 '>Upload</span>
+                          <span className='flex md:text-[16px] font-bold place-items-center gap-2 max-md:text-[12px]'>Upload</span>
                         </div>
                    </div>
                    </div>

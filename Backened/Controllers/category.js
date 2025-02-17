@@ -58,15 +58,18 @@ exports.categorypagedetails=async(req,res)=>{
         if(!allcategory){
             return res.status(404).json({
                 success:false,
-                message:"No course found"
+                message:"No course found" 
             })
         }
         //get courses for different categories
-        const differentcategory=await category.find({_id:{$ne:categoryid}}).populate({path:"course",match:{status:"Published"}}).exec()
-        
+        const differentcategory=await category.find({_id:{$ne:categoryid}}).populate({path:"course",match:{status:"Published", populate:{path: "ratingandreview" },}}).exec()
+
+       
+         
         //get the top selling course
-        const topcategory=await category.findById(categoryid).sort({rating:-1}).limit(2).populate({path:"course",match:{status:"Published"}}).exec()
+        const topcategory=await category.findById(categoryid).sort({rating:-1}).populate({path:"course",match:{status:"Published"},populate:"ratingandreview"}).exec()
         //return response
+        console.log("this is different category",differentcategory)
         return res.status(200).json({
             success:true,
             data:{

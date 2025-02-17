@@ -39,12 +39,12 @@ export default function DeleteAccount() {
         <MdOutlineAutoDelete color='red' fontSize="30px"/>
         </div>
         <div>
-        <h3 className=" text-[18px] text-[#ffcccc]  font-bold">
+        <h3 className=" md:text-[18px] text-[15px] text-[#ffcccc]  font-bold">
           Delete Account
         </h3>
-        <p className="text-[hsl(0,94%,72%)] text-[14px]">Would you like to delete your account?</p>
-        <p className="text-[hsl(0,94%,72%)] text-[14px]">This account may contain Paid Courses.Deleting your account is permanent and will remove all the associated with it.</p>
-        <p className="text-[#e61919] text-[14px] cursor-pointer font-bold" onClick={deleteUserAccount}>I want to delete my account</p>
+        <p className="text-[hsl(0,94%,72%)] md:text-[14px] text-[12px]">Would you like to delete your account?</p>
+        <p className="text-[hsl(0,94%,72%)] md:text-[14px] text-[12px]">This account may contain Paid Courses.Deleting your account is permanent and will remove all the associated with it.</p>
+        <p className="text-[#e61919] md:text-[14px] text-[12px] cursor-pointer font-bold" onClick={deleteUserAccount}>I want to delete my account</p>
         </div>
 
         </div>

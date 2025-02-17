@@ -9,6 +9,8 @@ export default function VideoElement() {
      const {coursedata,setcoursedata,videopreview,markcompleted,setmarkcompleted,rewatch,setrewatch,completedsubsectionid,setcompletedsubsectionid,setcompletedvideo}=useContext(CourseContext);     
 
      let playerposition=useRef(null);
+
+     const token=localStorage.getItem("token")
      
 
      console.log("this is subsectionid",completedsubsectionid)
@@ -20,6 +22,11 @@ export default function VideoElement() {
           {
             courseid:coursedata._id,
             subsectionid:completedsubsectionid
+          },
+          {
+            headers:{
+             "Authorization":`Bearer ${token}`,
+            }
           }
         )
         console.log(response?.data?.completedlecture)
@@ -34,7 +41,7 @@ export default function VideoElement() {
      }
      
   return (
-    <div className='relative w-[1250px] h-[500px]'>
+    <div className='relative xl:w-[1250px] xl:h-[500px] w-[650px] h-[250px]'>
       <ReactPlayer 
         url={videopreview} 
         ref={playerposition}

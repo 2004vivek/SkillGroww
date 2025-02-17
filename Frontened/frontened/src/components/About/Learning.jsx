@@ -6,11 +6,11 @@ export default function Learning() {
 
       <div className="flex text-white justify-center flex-wrap   item-center  ">
         <div className="h-[300px] w-[600px] flex  flex-col justify-center md:m-4 my-4 xl:m-0 ">
-          <h3 className="text-2xl xl:text-3xl  text-white font-bold">World-Class Learning for</h3>
-          <h3 className="text-2xl xl:text-3xl  bg-gradient-to-r from-sky-500 via-slate-300 to-blue-700 bg-clip-text text-transparent font-bold mb-4">
+          <h3 className="text-[16px] md:text-[17px] xl:text-3xl text-white font-bold">World-Class Learning for</h3>
+          <h3 className="text-[16px] md:text-[17px] xl:text-3xl  bg-gradient-to-r from-sky-500 via-slate-300 to-blue-700 bg-clip-text text-transparent font-bold mb-4">
             Anyone,Anywhere
           </h3>
-          <p className="text-slate-400 mb-4 ">
+          <p className="text-slate-400 mb-4 text-[13px] md:text-[14px] xl:text-[16px]">
             SkillGrow partners with more than
             150+ leading universities and companies to bring flexible,
             affordable, job-relevant online learning to individuals and
@@ -21,18 +21,18 @@ export default function Learning() {
           </button>
           </div>
         </div>
-        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px]  flex justify-center align-items flex-col bg-slate-900 p-6 md:m-4 my-4  xl:m-0 ">
-          <h3 className="text-xl text-white  mb-4">
+        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px]  flex justify-center align-items flex-col bg-slate-900 md:p-6 p-3 md:m-4 my-4  xl:m-0 ">
+          <h3 className="text-[16px] xl:text-3xl text-white  mb-4">
             Curriculum Based on Industry Needs
           </h3>
-          <p className="text-slate-400 ">
+          <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
             Save time and money! The curriculum is made to be easier to
             understand and is line with indusrty needs
           </p>
         </div>
-        <div className="  h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-transparent p-6 md:m-4 my-4 xl:m-0 ">
-          <h3 className="text-xl text-white  mb-4">Our Learning Methods</h3>
-          <p className="text-slate-400 ">
+        <div className="  h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-transparent md:p-6 p-3 md:m-4 my-4 xl:m-0 ">
+          <h3 className="text-[16px] xl:text-3xl text-white  mb-4">Our Learning Methods</h3>
+          <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
             StudyGrow partners with more than 150+ leading univerisities and
             companies to bring
           </p>
@@ -41,24 +41,24 @@ export default function Learning() {
 
       <div className="flex justify-center flex-wrap items-center ">
       <div className='xl:h-[300px] xl:w-[300px] h-0 w-0'></div>
-        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-slate-900 p-6 md:m-4 my-4 xl:m-0 ">
-          <h3 className="text-xl text-white  mb-4">Certification</h3>
-          <p className="text-slate-400 ">
+        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-slate-900 md:p-6 p-3 md:m-4 my-4 xl:m-0 ">
+          <h3 className="text-[16px] xl:text-3xl text-white  mb-4">Certification</h3>
+          <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
             StudyGrow partners with more than 150+ leading univerisities and
             companies to bring
           </p>
         </div>
-        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-transparent p-6 md:m-4 my-4 xl:m-0 ">
+        <div className=" h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-transparent md:p-6 p-3 md:m-4 my-4 xl:m-0 ">
           {" "}
-          <h3 className="text-xl text-white  mb-4">Rating Auto-grading</h3>
-          <p className="text-slate-400 ">
+          <h3 className="text-[16px] xl:text-3xl text-white  mb-4">Rating Auto-grading</h3>
+          <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
             StudyGrow partners with more than 150+ leading univerisities and
             companies to bring
           </p>
         </div>
-        <div className="  h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-slate-900 p-6 md:m-4 my-4 xl:m-0 ">
-          <h3 className="text-xl text-white mb-4">Ready To work</h3>
-          <p className="text-slate-400 ">
+        <div className="  h-[250px] w-[250px] lg:w-[300px] lg:h-[300px] flex justify-center align-items flex-col bg-slate-900 md:p-6 p-3 md:m-4 my-4 xl:m-0 ">
+          <h3 className="text-[16px] xl:text-3xl text-white mb-4">Ready To work</h3>
+          <p className="text-slate-400 text-[13px] md:text-[14px] xl:text-[16px]">
             StudyGrow partners with more than 150+ leading univerisities and
             companies to bring
           </p>

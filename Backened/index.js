@@ -23,7 +23,7 @@ app.options("*", cors());
 app.use(cookieparser())
 
 app.use(cors({
-    origin:"https://skill-groww.vercel.app",
+    origin:"https://skill-groww-git-vivek-2004viveks-projects.vercel.app",
     credentials:true
 }))
 
@@ -49,7 +49,7 @@ dbconnect()
 
 app.use("/api/v1/user",userroute)
 app.use("/api/v1/profile",profileroute)
-app.use("/api/v1/course",courseroute)
+app.use("/api/v1/course",courseroute) 
 app.use("/api/v1/payment",paymentroute)
 app.use("/api/v1/cart",cartroute)
 app.use("/api/v1/courseprogress",courseprogress)

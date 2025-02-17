@@ -80,11 +80,12 @@ const createcourse=async(req,res)=>{
 
         // update the category
         await Category.findByIdAndUpdate(
-            {_id:category},{
+            {_id:categoryDetails._id},{
                 $push:{
                     course:updatedcourse._id
                 },
-            },{
+            },
+            {
                 new:true
             }
         )
@@ -100,7 +101,7 @@ const createcourse=async(req,res)=>{
             message:"Error occured while creating course",
             error:error.message
         })
-    }
+    } 
 }
 
 //edit a course
@@ -260,7 +261,7 @@ exports.getcoursedetails=async(req,res)=>{
         .populate("ratingandreview")
         .populate({
             path:"coursecontent",
-            populate:{
+            populate:{ 
                 path:"subsection"
             }
         })

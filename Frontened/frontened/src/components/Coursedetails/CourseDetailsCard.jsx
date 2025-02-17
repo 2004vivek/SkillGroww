@@ -16,7 +16,7 @@ export default function CourseDetailsCard({coursedata}) {
     const location=useLocation();
     const userdetails=JSON.parse(localStorage.getItem("usertype"))
     const userid=userdetails._id;
-    const pathname="https://skill-groww.vercel.app"+location.pathname;
+    const pathname="http://localhost:5173"+location.pathname;
     const shareHandler=()=>{
         copy(pathname);
         toast.success("Copied to Clipboard")
@@ -48,8 +48,8 @@ export default function CourseDetailsCard({coursedata}) {
       try {
         const stripe = await loadStripe("pk_test_51QSifpEZj9co3L2BbdcWAV8hYQoauxstmYUoTk1c2qsXoB1jhMDM5aix7ymmLGwQ4cgLQhG23ZlVPXDpqCJvenSP00vU5n6CpL");
   
-        const response=await axios.post("https://skillgroww.onrender.com/api/v1/payment/transaction",
-        {cartitem:cartitem,discountprice:discountprice,userid:userid}
+        const response=await axios.post("https://skillgroww-1.onrender.com/api/v1/payment/transaction",
+        {cartitem:cartitem,discountprice:discountprice,userid:userid,cartitemid:''}
           
         )
         console.log("this is error while stripe redirect",response)
@@ -68,31 +68,31 @@ export default function CourseDetailsCard({coursedata}) {
 
   return (
     <div className='bg-slate-800 p-5 rounded-lg '>
-      <div className='w-[270px] h-[250px] '>
-        <video src={coursedata?.thumbnails} alt="courseimg"  className='h-full w-full object-cover rounded-lg'/>
+      <div className='lg:w-[270px] lg:h-[250px]'>
+        <video src={coursedata?.thumbnails} alt="courseimg" className='h-full w-full object-cover rounded-lg'/>
       </div>
-      <div className='mt-2 text-3xl font-bold'>
+      <div className='mt-2 md:text-3xl text-[20px] font-bold'>
         Rs. {coursedata?.price}
       </div>
 
       <div className='flex flex-col gap-3 mt-2'>
-    <button className='bg-yellow-500 py-2 rounded-lg text-black font-bold' onClick={coursedata?.studentEnrolled?.some(student=>student._id===userid)?()=>navigate(`/dashboard/enrolled-course/${userid}`):handleBuyNow}>
+    <button className='bg-yellow-500 md:py-2 py-[6px] rounded-lg text-black font-bold text-[14px] md:text-[18px]' onClick={coursedata?.studentEnrolled?.some(student=>student._id===userid)?()=>navigate(`/dashboard/enrolled-course/${userid}`):handleBuyNow}>
         {coursedata?.studentEnrolled?.some(student=>student._id===userid)?"Go To Course":"Buy Now"}
     </button>
 
     {!coursedata?.studentEnrolled?.some((student)=>student._id==userid)&&
-     <button className='bg-gray-700 py-2 rounded-lg font-bold' onClick={()=>AddtoCart(coursedata?._id)}>
+     <button className='bg-gray-700 md:py-2 py-[6px] rounded-lg font-bold text-[14px] md:text-[18px]' onClick={()=>AddtoCart(coursedata?._id)}>
 
      {loader?"Adding....":"Add to Cart"}
  </button>
     }
    
       </div>
-      <div className='text-center mt-2'>Refund of <span className='text-yellow-400'>90% </span>in 90 days</div>
+      <div className='text-center mt-2 text-[14px] md:text-[18px]'>Refund of <span className='text-yellow-400 '>90% </span>in 90 days</div>
       <div className='mt-4'>
-        <p className='font-semibold'>This Course Include : </p>
+        <p className='font-semibold text-[14px] md:text-[18px]'>This Course Include : </p>
         {coursedata?.instruction?.map((data)=>(
-            <li className='ml-2 mt-1'>{data}</li>
+            <li className='ml-2 mt-1 text-[14px] md:text-[18px] text-green-500'>{data}</li>
         ))}
       </div>
       <div className='mt-3 flex justify-center items-center gap-1 cursor-pointer' onClick={shareHandler}>
