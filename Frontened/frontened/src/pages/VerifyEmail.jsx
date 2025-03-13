@@ -1,23 +1,49 @@
 import React, { useContext, useState } from "react";
 import Navbar from "../components/CoreComponent/Navbar";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import OTPInput from "react-otp-input";
 import { Appcontext } from "../context/AppContext";
-
+import { toast } from "react-toastify";
+import axios from "axios";
 export default function VerifyEmail() {
-  const {otp,EmailVerifysubmitHandler,setotp,setsignupinputfield,signupinputfield}=useContext(Appcontext)
+  const {otp,EmailVerifysubmitHandler,setotp,setsignupinputfield,signupinputfield,setloading,setemail,loading}=useContext(Appcontext)
+  const navigate=useNavigate();
+  const {email}=signupinputfield;
+  console.log(email)
+   const ResendOtp=async(e)=>{
+      setloading(true);
+      try {
+          const {email}=signupinputfield;
+          console.log(email)
+          const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/sendotp`,{email})
+          setemail(email);
+          console.log("hi",response.data);
+          toast.success("Otp Sent Successfully");
+          navigate("/verify-email")
+      } catch (error) {
+          console.log("Error occurred while sending otp",);
+          console.log(error.response?.data||error.message)
+          toast.error(error?.response?.data)
+      }
+      finally{
+        setloading(false);
+      }
+     }
+
   return (
     <div>
-      <Navbar />
-      <div className="min-h-[85vh]  w-100% flex justify-center items-center">
+      {loading?<div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-900 text-yellow-500 bg-opacity-50 z-50">Loading...</div>:
+      <>
+        <Navbar />
+        <div className="min-h-[85vh]  w-100% flex justify-center items-center">
         <div className="md:max-w-96 max-w-72">
           <h3 className="text-white text-3xl font-semibold">Verify Email</h3>
           <p className="text-slate-500 mt-4">
             A verification code has send to you.Enter the code below
           </p>
           <div>
-            <form action="" onSubmit={EmailVerifysubmitHandler}>
+            <form action="" onSubmit={(e)=>EmailVerifysubmitHandler(e,navigate)}>
               <OTPInput
                 value={signupinputfield.otp}
                 onChange={(otp)=>{setsignupinputfield((prev) => ({ ...prev, otp }))}}
@@ -52,11 +78,11 @@ export default function VerifyEmail() {
               />
                
               <div className="bg-yellow-400 rounded py-2 font-semibold cursor-pointer mt-6 text-center">
-                <button >Verify Email</button>
+                <button type="submit">Verify Email</button>
               </div>
             </form>
           </div>
-          <Link to=""><div className="bg-yellow-400 rounded py-2 font-semibold cursor-pointer mt-6 text-center"><button >Resend Email</button></div></Link>
+         <div className="bg-yellow-400 rounded py-2 font-semibold cursor-pointer mt-6 text-center"><button onClick={ResendOtp}>Resend Email</button></div>
           <div className="mt-5">
           
             <Link to="/">
@@ -71,6 +97,10 @@ export default function VerifyEmail() {
           </div>
         </div>
       </div>
+      </>
+      }
+     
+   
     </div>
   );
 }

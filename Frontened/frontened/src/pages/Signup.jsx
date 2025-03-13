@@ -24,7 +24,7 @@ export default function Signup() {
     } catch (error) {
         console.log("Error occurred while sending otp",);
         console.log(error.response?.data||error.message)
-        toast.error(error.response.data)
+        toast.error(error?.response?.data)
     }
     finally{
       setloading(false);
