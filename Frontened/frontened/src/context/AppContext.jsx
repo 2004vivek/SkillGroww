@@ -85,13 +85,14 @@ console.log(signupinputfield)
 
    }
 
-   const EmailVerifysubmitHandler = async(e) => {
+   const EmailVerifysubmitHandler = async(e,navigate) => {
     e.preventDefault();
     try {
        
         const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/user/signup`,signupinputfield);
         console.log(response.data);
         toast.success("Signup successful!");
+        navigate("/signup")
         
     } catch (error) {
     console.error("Error during signup:", error.response?.data || error.message);
